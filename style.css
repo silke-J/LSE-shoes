@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap");
+
+/* Base css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1140px) {
+  /* Responsive til containeren */
+  .container {
+    width: 90%;
+  }
+}
+
+/* Base css end */
+
+/* Navbar */
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  transition: border-bottom 0.3s, box-shadow 0.3s; /* For effekten når man scroller ned. */
+  border-bottom: 1px solid #ccc;
+  z-index: 10;
+}
+
+nav .nav-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-content > ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.nav-content > ul > a {
+  border-top: 3px solid transparent; /* Fordi ellers ville hover effekten skube linket ned af. */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0px 17px 0px 20px;
+  color: #2b2727;
+  font-size: 0.95rem;
+  transition: border-top 0.2s, color 0.2s;
+}
+
+.nav-content > ul > a:hover {
+  border-top: 3px solid #4ccce9;
+  color: #4ccce9;
+}
+
+.nav-content > ul .prodbtn > button {
+  font-size: 0.95rem;
+  color: white;
+  border: 0;
+  background-color: #2bb7d6;
+  padding: 8px 20px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.nav-content > ul .prodbtn:hover {
+  /* a/anchor tagget selv */
+  border-top: 3px solid transparent; /* Fjerne den blå boks over linket */
+}
+
+.nav-content > ul .prodbtn button:hover {
+  /* Knappen selv i linket */
+  background-color: #16a1c0;
+}
+
+.nav-content > .nav-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 15px; /* Fordi er der også ved linksne i navigationen i den anden side, bare for bedre symetri */
+}
+
+.nav-content > .nav-logo > img {
+  width: 55px;
+  height: auto;
+  padding: 2px 0px 2px 0px;
+}
+
+nav.onscroll {
+  border-bottom: 1px solid transparent;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Navbar end */
+
+/* navbar responsive */
+.burger-btn {
+  display: none;
+  transition: 0.3s;
+}
+
+.burger-btn.active {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1000px) {
+  /* generel responsive navbar */
+  nav.onscroll {
+    /* Fjern onscroll effekten på mobil */
+    box-shadow: 0px 0px 0px;
+  }
+  nav {
+    /* Mobil navbaren */
+    transform: translateX(-60vw);
+    position: fixed;
+    height: 100vh;
+    width: 60vw;
+    background-color: white; /* Skal "desværre" være hvid, eftersom dele af logoet har en hvid baggrund... */
+    transition: box-shadow 0s; /* fordi der allerede er en box-shadow transition, men jeg ville fjerne den */
+  }
+
+  .burger-btn {
+    display: flex;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    z-index: 20;
+    font-size: 2.7rem;
+    cursor: pointer;
+    color: #4ccce9;
+  }
+
+  nav.active {
+    box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.25) !important; /* !important; Ellers tager fjernelsen af onscroll over! */
+    transform: translateX(0vw);
+  }
+
+  nav > .nav-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  nav > .nav-content > ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav > .nav-content > ul > a {
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+    justify-content: center;
+    padding: 13px 0px 13px 0px;
+  }
+
+  nav > .nav-content > ul > a:hover {
+    border-top: 3px solid transparent;
+    color: #2bb7d6;
+    background-color: #ddd;
+  }
+
+  .nav-content > ul .prodbtn:hover {
+    background-color: white;
+  }
+
+  nav > .nav-content > .nav-logo {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  /* billed i naven til telefon */
+  nav > .nav-content > .nav-logo > img {
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  /* billedet i naven til tablet ting */
+  nav > .nav-content > .nav-logo > img {
+    width: 40%;
+    height: auto;
+  }
+}
+
+/* instagram section */
+
+.some {
+  padding: 0px 0px 15px 0px;
+
+  background-color: #f6f4f4;
+  padding: 35px 0px 20px 0px; /* Pga. skewy */
+  margin-bottom: 10px;
+
+  transform: skewY(2deg);
+}
+
+@media (max-width: 500px) {
+  .some {
+    padding: 25px 0px 15px 0px;
+  }
+}
+
+.some .some-content {
+  transform: skewY(-2deg);
+}
+
+.some .some-embed {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.some .some-embed iframe {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+.some-title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #656565;
+  letter-spacing: 0.1rem;
+}
+
+.some-title::before,
+.some-title::after {
+  content: ""; /* Ingen tekst foran og efter. */
+  height: 3px;
+  flex-grow: 1;
+  background-color: #ccc;
+}
+
+/* instagram responsive */
+@media (max-width: 700px) {
+  .some-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* FOOTER */
+footer {
+  padding: 15px 0px 0px 0px;
+  background-color: #2bb7d6;
+}
+
+footer > .footer-maincontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+footer > .footer-maincontent h2 {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 400;
+}
+
+footer > .footer-maincontent > .contact-info .bold-contact {
+  font-weight: 300;
+}
+
+footer > .footer-maincontent .normal-text {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+  transition: color 0.3s; /* For linkene */
+  font-size: 1rem;
+}
+
+footer > .footer-maincontent a:hover {
+  color: #e8e8e8;
+}
+
+footer > .footer-maincontent ul {
+  list-style-type: none;
+}
+
+footer > .copyright-section {
+  padding: 5px 0px 5px 0px;
+  color: white;
+  font-weight: 200;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #16a1c0;
+}
+
+/* footer end */
+
+/* footer responsive */
+@media (max-width: 1000px) {
+  footer > .footer-maincontent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  footer > .copyright-section {
+    padding: 8px 0px 8px 0px;
+  }
+}
+/* footer responsive end */
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery {
+  text-align: center;
+}
+
+.mainImage {
+  width: 450px;
+  height: 500px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) and (min-width: 400px) {
+  .mainImage {
+    height: 500px;
+    width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .mainImage {
+    width: 90%;
+    height: auto;
+  }
+}
+
+.image {
+  width: 70px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.image:hover {
+  opacity: 1;
+}
+
+.gallery {
+  position: relative;
+}
+
+.gallery button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+  background-color: #4ccce9;
+  margin-top: 10px;
+  height: 40px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.slider button:hover {
+  background-color: #f0f0f0;
+}
+
+.parent {
+  max-width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .parent {
+    max-width: 90%;
+  }
+}
+.div2 {
+  grid-area: 3 / 2 / 8 / 5;
+}
+.div3 {
+  grid-area: 4 / 3 / 10 / 6;
+}
+.div4 {
+  grid-area: 7 / 1 / 12 / 4;
+}
+.div5 {
+  grid-area: 7 / 5 / 13 / 8;
+}
+.div6 {
+  grid-area: 1 / 6 / 10 / 9;
+}
+
+.parent img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  height: 80vh;
+  width: 100%;
+
+  background-image: url("img/sko-header.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-family: "Lugrasimo", cursive;
+  color: white;
+  font-size: 8rem;
+}
+
+@media (max-width: 700px) {
+  header {
+    height: 45vh;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+}
+.about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us p {
+  width: 700px;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+}
+
+@media (max-width: 1000px) {
+  .about-us p {
+    width: 70%;
+  }
+}
+
+.about-us h3 {
+  font-size: clamp(26px, 3vw, 40px);
+  place-content: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.container-cards {
+  max-width: 60%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-column-gap: 40px;
+  grid-row-gap: clamp(40px, 4vw, 60px);
+
+  place-content: center;
+}
+
+.cards h3 {
+  font-size: clamp(26px, 3vw, 40px);
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #ebebeb;
+  border: solid;
+  border-color: #ebebeb;
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+.card img {
+  border-radius: 30px;
+  max-width: 100%;
+  height: auto;
+}
+
+.lightgrey {
+  display: grid;
+  place-content: center;
+  height: clamp(50px, 4.5vw, 80px);
+}
+
+.darkgrey {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  height: clamp(60px, 4.5vw, 80px);
+  border-radius: 0 0 20px 20px;
+  background-color: #ccc;
+}
+
+.Contact {
+  display: flex;
+  margin-top: 0px;
+}
+.contact-data {
+  text-align: center;
+}
+
+.contact-data {
+  padding: 0px 0px 10px 0px;
+  width: 100vw;
+}
+
+.contact-heading {
+  font-size: clamp(26px, 3vw, 40px);
+  margin-bottom: 0px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+textarea {
+  resize: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-input {
+  font-family: "poppins", sans-serif;
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #747474cc;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 10px;
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+  .contact-input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-input {
+    width: 90%;
+  }
+}
+
+.contact-btn {
+  background-color: #4ccce9;
+  color: #fff;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: #747474cc;
+  background-color: #16a1c0;
+}
+
+.contact-input:focus {
+  border: 1px solid #4ccce9;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="burger-btn">☰</div>
+
+    <nav>
+      <div class="nav-content container">
+        <div class="nav-logo">
+          <img src="img/logo-smaller.png" alt="" />
+        </div>
+        <ul>
+          <a href="#top"><li>Home</li></a>
+          <a href="#about"><li>About</li></a>
+          <a href="#gallery"><li>Gallery</li></a>
+          <a href="#instagram"><li>SoMe Posts</li></a>
+          <a href="#contact"><li>Contact</li></a>
+          <a href="#products" class="prodbtn"><button>See Products</button></a>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1>LSE Shoes</h1>
+    </header>
+    <!-- Et biled med tekst. -->
+
+    <section class="about-us" id="about">
+      <h3>About us</h3>
+      <p>
+        LSE Shoes Shop is a unique store specializing in offering a wide range
+        of luxurious and stylish shoes with flower designs.From minimalist white
+        canvas to bold and colorful prints, our collection spans many different
+        styles to cater to all fashion needs. We work closely with our partners
+        - world-leading sneaker manufacturers - to ensure that each pair is not
+        only visually appealing but also provides optimal support and comfort
+        for everyday wear. Whether you are looking for a pair of casual everyday
+        sneakers or bold statement shoes, our selection offers something for
+        everyone.
+      </p>
+    </section>
+
+    <section class="cards" id="products">
+      <h3>Products</h3>
+      <div class="container-cards container">
+        <div class="card">
+          <img src="img/Sko1.svg" />
+          <div class="lightgrey"><h2>Petal Stepper-White</h2></div>
+          <div class="darkgrey">
+            <p>
+              Our classic shoe in a plain white color.
+              <br />
+              $105 <a href="#"> More info...</a>.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/sko2.svg" />
+          <div class="lightgrey"><h2>Petal Stepper-Yellow</h2></div>
+          <div class="darkgrey">
+            <p>
+              A variant of classic shoe in yellow. <br />
+              $120 <a href=""> More info...</a>.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/sko3.svg" />
+          <div class="lightgrey"><h2>Petal Stepper-Green</h2></div>
+          <div class="darkgrey">
+            <p>
+              A new version of our classic shoe in green. <br />
+              $120 <a href=""> More info...</a>.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/sko4.svg" />
+          <div class="lightgrey"><h2>Petal Stepper-Blue</h2></div>
+          <div class="darkgrey">
+            <p>
+              Our traditional shoe in blue. <br />
+              $120 <a href=""> More info...</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gallery-wrapper container" id="gallery">
+      <div class="gallery">
+        <img class="mainImage" src="/img/miljø 3.svg" alt="" />
+        <div class="myImages">
+          <img class="image" src="/img/miljø2 1.svg" alt="" />
+          <img class="image" src="/img/miljø3 1.svg" alt="" />
+          <img class="image" src="/img/miljø4 1.svg" alt="" />
+          <img class="image" src="/img/miljø5 1.svg" alt="" />
+          <img class="image" src="/img/Sko1 1.svg" alt="" />
+          <img class="image" src="/img/sko2 1.svg" alt="" />
+          <img class="image" src="/img/sko3 1.svg" alt="" />
+          <img class="image" src="/img/sko4 1.svg" alt="" />
+          <button class="prev">Forrige</button>
+          <button class="next">Næste</button>
+        </div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="div1"></div>
+      <div class="div2">
+        <img src="/img/miljø 3.svg" alt="" />
+      </div>
+      <div class="div3"><img src="/img/miljø2 1.svg" alt="" /></div>
+      <div class="div4"><img src="/img/miljø3 1.svg" alt="" /></div>
+      <div class="div5"><img src="/img/miljø4 1.svg" alt="" /></div>
+      <div class="div6">
+        <img src="/img/miljø5 1.svg" alt="" />
+      </div>
+    </div>
+
+    <section class="some" id="instagram">
+      <div class="some-content container">
+        <h1 class="some-title">Follow us on Instagram</h1>
+        <div class="some-embed">
+          <iframe
+            class="instagram-media instagram-media-rendered"
+            id="instagram-embed-1"
+            src="https://www.instagram.com/lse.shoes_/embed"
+            allowtransparency="true"
+            allowfullscreen="true"
+            frameborder="0"
+            height="409"
+            data-instgrm-payload-id="instagram-media-payload-1"
+            scrolling="no"
+            style="
+              background: white;
+              max-width: 540px;
+              width: calc(100% - 2px);
+              border-radius: 3px;
+              border: 1px solid rgb(219, 219, 219);
+              box-shadow: none;
+              display: block;
+              margin: 0px 0px 12px;
+              min-width: 326px;
+              padding: 0px;
+            "
+          ></iframe>
+        </div>
+        <script async src="//www.instagram.com/embed.js" defer></script>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="contact-data">
+        <h2 class="contact-heading container">Contact us</h2>
+
+        <form action="#" class="contact-form container">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            class="contact-input"
+          />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            class="contact-input"
+          />
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            class="contact-input"
+          ></textarea>
+          <input type="submit" value="Send" class="contact-input contact-btn" />
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-maincontent container">
+        <div class="menu">
+          <h2>Menu</h2>
+          <ul>
+            <li><a class="normal-text" href="#top">Home</a></li>
+            <li><a class="normal-text" href="#products">Products</a></li>
+            <li><a class="normal-text" href="#gallery">Gallery</a></li>
+            <li><a class="normal-text" href="#instagram">SoMe</a></li>
+            <li><a class="normal-text" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="contact-info">
+          <h2>Contact us</h2>
+          <p class="normal-text">
+            <span class="bold-contact">Address: </span>Skaldehøjvej 2
+          </p>
+          <p class="normal-text">
+            <span class="bold-contact">Zip Code: </span>8800, Viborg
+          </p>
+          <p class="normal-text">
+            <span class="bold-contact">Phone: </span>+45 86 67 50 55
+          </p>
+          <p class="normal-text">
+            <span class="bold-contact">Email: </span>mail@lseshoes.com
+          </p>
+        </div>
+
+        <div class="social-media">
+          <h2>Social media</h2>
+          <ul>
+            <li>
+              <a class="normal-text" href="https://instagram.com">Instagram</a>
+            </li>
+            <li>
+              <a class="normal-text" href="https://facebook.com">Facebook</a>
+            </li>
+            <li>
+              <a class="normal-text" href="https://twitter.com">Twitter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>© LSE Shoes</p>
+      </div>
+    </footer>
+  </body>
+</html>
